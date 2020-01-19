@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/weatherFragment">
+
+    <fragment
+        android:id="@+id/weatherFragment"
+        android:name="com.home.mvvmcoroutinesandflowdemo.menu.view.MenuFragment"
+        android:label="WeatherFragment">
+        <!--
+        比如說 Fragment1跳轉Fragment2
+        app：enterAnim是這個動作目的地進入的動畫 是Fragment2入場的動畫
+        app：exitAnim是這個動作所在元素離開的動畫 是Fargment1離場的動畫
+        app：popEnterAnim是這個點擊返回動作 目的地出棧時 action所在元素入場的動畫 是Fargment1入場的動畫
+        app：popExitAnim是這個點擊返回動作 目的地出棧時離開的動畫 是Fragment2離場的動畫
+        前兩個是移動到目的地的動畫 後兩個是離開目的地的動畫
+        -->
+        <action
+            android:id="@+id/action_weatherFragment_to_forecastsFragment"
+            app:destination="@id/forecastsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/forecastsFragment"
+        android:name="com.home.mvvmcoroutinesandflowdemo.detail.view.DetailFragment"
+        android:label="ForecastsFragment"/>
+</navigation>
